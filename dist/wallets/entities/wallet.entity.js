@@ -15,8 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WalletSchema = exports.Wallet = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const crypto_1 = __importDefault(require("crypto"));
+const mongoose_2 = __importDefault(require("mongoose"));
+const wallet_asset_entity_1 = require("./wallet-asset.entity");
 let Wallet = class Wallet {
     _id;
+    assets;
     createdAt;
     updatedAt;
 };
@@ -25,6 +28,14 @@ __decorate([
     (0, mongoose_1.Prop)({ default: () => crypto_1.default.randomUUID() }),
     __metadata("design:type", String)
 ], Wallet.prototype, "_id", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        type: [mongoose_2.default.Schema.Types.String],
+        set: (v) => [...new Set(v)],
+        ref: wallet_asset_entity_1.WalletAsset.name,
+    }),
+    __metadata("design:type", Array)
+], Wallet.prototype, "assets", void 0);
 exports.Wallet = Wallet = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Wallet);

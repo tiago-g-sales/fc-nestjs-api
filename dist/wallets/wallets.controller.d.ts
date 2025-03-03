@@ -1,6 +1,6 @@
-import { WalletsService } from './wallets.service';
-import { CreateWalletDto } from './dto/create-wallet.dto';
-import { UpdateWalletDto } from './dto/update-wallet.dto';
+import { WalletsService } from "./wallets.service";
+import { CreateWalletDto } from "./dto/create-wallet.dto";
+import { UpdateWalletDto } from "./dto/update-wallet.dto";
 export declare class WalletsController {
     private readonly walletsService;
     constructor(walletsService: WalletsService);

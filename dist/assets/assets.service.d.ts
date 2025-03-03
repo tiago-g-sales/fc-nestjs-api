@@ -1,7 +1,7 @@
-import { CreateAssetDto } from './dto/create-asset.dto';
-import { UpdateAssetDto } from './dto/update-asset.dto';
-import { Asset } from './entities/asset.entity';
-import { Model } from 'mongoose';
+import { CreateAssetDto } from "./dto/create-asset.dto";
+import { UpdateAssetDto } from "./dto/update-asset.dto";
+import { Asset } from "./entities/asset.entity";
+import { Model } from "mongoose";
 export declare class AssetsService {
     private assetSchema;
     constructor(assetSchema: Model<Asset>);

@@ -13,6 +13,7 @@ const app_service_1 = require("./app.service");
 const assets_module_1 = require("./assets/assets.module");
 const mongoose_1 = require("@nestjs/mongoose");
 const wallets_module_1 = require("./wallets/wallets.module");
+const orders_module_1 = require("./orders/orders.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -21,9 +22,10 @@ exports.AppModule = AppModule = __decorate([
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb://root:rootpassword@localhost:27017/nest?authSource=admin&directConnection=true'),
+            mongoose_1.MongooseModule.forRoot("mongodb://root:rootpassword@localhost:27017/nest?authSource=admin&directConnection=true"),
             assets_module_1.AssetsModule,
             wallets_module_1.WalletsModule,
+            orders_module_1.OrdersModule,
         ],
     })
 ], AppModule);

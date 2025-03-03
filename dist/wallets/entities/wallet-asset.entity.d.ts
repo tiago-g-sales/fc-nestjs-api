@@ -1,6 +1,6 @@
-import mongoose, { HydratedDocument } from 'mongoose';
-import { AssetDocument } from 'src/assets/entities/asset.entity';
-import { WalletDocument } from './wallet.entity';
+import mongoose, { HydratedDocument } from "mongoose";
+import { AssetDocument } from "src/assets/entities/asset.entity";
+import { WalletDocument } from "./wallet.entity";
 export type WalletAssetDocument = HydratedDocument<WalletAsset>;
 export declare class WalletAsset {
     _id: string;

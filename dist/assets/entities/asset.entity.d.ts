@@ -1,4 +1,4 @@
-import { HydratedDocument } from 'mongoose';
+import { HydratedDocument } from "mongoose";
 export type AssetDocument = HydratedDocument<Asset>;
 export declare class Asset {
     _id: string;

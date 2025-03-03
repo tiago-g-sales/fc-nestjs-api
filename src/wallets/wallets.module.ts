@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { WalletsService } from './wallets.service';
-import { WalletsController } from './wallets.controller';
-import { Wallet, WalletSchema } from './entities/wallet.entity';
-import { WalletAsset, WalletAssetSchema } from './entities/wallet-asset.entity';
-import { MongooseModule } from '@nestjs/mongoose';
+import { Module } from "@nestjs/common";
+import { WalletsController } from "./wallets.controller";
+import { Wallet, WalletSchema } from "./entities/wallet.entity";
+import { WalletAsset, WalletAssetSchema } from "./entities/wallet-asset.entity";
+import { MongooseModule } from "@nestjs/mongoose";
+import { WalletsService } from "./wallets.service";
 
 @Module({
   imports: [

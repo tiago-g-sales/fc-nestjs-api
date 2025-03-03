@@ -17,19 +17,23 @@ const common_1 = require("@nestjs/common");
 const assets_service_1 = require("./assets.service");
 const create_asset_dto_1 = require("./dto/create-asset.dto");
 const update_asset_dto_1 = require("./dto/update-asset.dto");
+const asset_presenter_1 = require("./asset.presenter");
 let AssetsController = class AssetsController {
     assetsService;
     constructor(assetsService) {
         this.assetsService = assetsService;
     }
-    create(createAssetDto) {
-        return this.assetsService.create(createAssetDto);
+    async create(createAssetDto) {
+        const asset = await this.assetsService.create(createAssetDto);
+        return new asset_presenter_1.AssetPresenter(asset);
     }
-    findAll() {
-        return this.assetsService.findAll();
+    async findAll() {
+        const assets = await this.assetsService.findAll();
+        return assets.map((asset) => new asset_presenter_1.AssetPresenter(asset));
     }
-    findOne(symbol) {
-        return this.assetsService.findOne(symbol);
+    async findOne(symbol) {
+        const asset = await this.assetsService.findOne(symbol);
+        return new asset_presenter_1.AssetPresenter(asset);
     }
     update(id, updateAssetDto) {
         return this.assetsService.update(id, updateAssetDto);
@@ -44,38 +48,38 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_asset_dto_1.CreateAssetDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], AssetsController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], AssetsController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)(':symbol'),
-    __param(0, (0, common_1.Param)('symbol')),
+    (0, common_1.Get)(":symbol"),
+    __param(0, (0, common_1.Param)("symbol")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], AssetsController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.Patch)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Patch)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_asset_dto_1.UpdateAssetDto]),
     __metadata("design:returntype", void 0)
 ], AssetsController.prototype, "update", null);
 __decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], AssetsController.prototype, "remove", null);
 exports.AssetsController = AssetsController = __decorate([
-    (0, common_1.Controller)('assets'),
+    (0, common_1.Controller)("assets"),
     __metadata("design:paramtypes", [assets_service_1.AssetsService])
 ], AssetsController);
 //# sourceMappingURL=assets.controller.js.map

@@ -60,37 +60,37 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], WalletsController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Get)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], WalletsController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.Patch)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Patch)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_wallet_dto_1.UpdateWalletDto]),
     __metadata("design:returntype", void 0)
 ], WalletsController.prototype, "update", null);
 __decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], WalletsController.prototype, "remove", null);
 __decorate([
-    (0, common_1.Post)(':id/assets'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Post)(":id/assets"),
+    __param(0, (0, common_1.Param)("id")),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], WalletsController.prototype, "createWalletAsset", null);
 exports.WalletsController = WalletsController = __decorate([
-    (0, common_1.Controller)('wallets'),
+    (0, common_1.Controller)("wallets"),
     __metadata("design:paramtypes", [wallets_service_1.WalletsService])
 ], WalletsController);
 //# sourceMappingURL=wallets.controller.js.map

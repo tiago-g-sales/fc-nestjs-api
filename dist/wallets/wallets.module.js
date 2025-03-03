@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WalletsModule = void 0;
 const common_1 = require("@nestjs/common");
-const wallets_service_1 = require("./wallets.service");
 const wallets_controller_1 = require("./wallets.controller");
 const wallet_entity_1 = require("./entities/wallet.entity");
 const wallet_asset_entity_1 = require("./entities/wallet-asset.entity");
 const mongoose_1 = require("@nestjs/mongoose");
+const wallets_service_1 = require("./wallets.service");
 let WalletsModule = class WalletsModule {
 };
 exports.WalletsModule = WalletsModule;

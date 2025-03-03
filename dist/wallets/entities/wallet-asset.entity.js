@@ -17,7 +17,6 @@ const mongoose_1 = require("@nestjs/mongoose");
 const crypto_1 = __importDefault(require("crypto"));
 const mongoose_2 = __importDefault(require("mongoose"));
 const asset_entity_1 = require("../../assets/entities/asset.entity");
-const wallet_entity_1 = require("./wallet.entity");
 let WalletAsset = class WalletAsset {
     _id;
     shares;
@@ -36,7 +35,7 @@ __decorate([
     __metadata("design:type", Number)
 ], WalletAsset.prototype, "shares", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ type: String, ref: wallet_entity_1.Wallet.name }),
+    (0, mongoose_1.Prop)({ type: String, ref: "Wallet" }),
     __metadata("design:type", Object)
 ], WalletAsset.prototype, "wallet", void 0);
 __decorate([

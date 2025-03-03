@@ -1,32 +1,13 @@
-import { AssetsService } from './assets.service';
-import { CreateAssetDto } from './dto/create-asset.dto';
-import { UpdateAssetDto } from './dto/update-asset.dto';
+import { AssetsService } from "./assets.service";
+import { CreateAssetDto } from "./dto/create-asset.dto";
+import { UpdateAssetDto } from "./dto/update-asset.dto";
+import { AssetPresenter } from "./asset.presenter";
 export declare class AssetsController {
     private readonly assetsService;
     constructor(assetsService: AssetsService);
-    create(createAssetDto: CreateAssetDto): Promise<import("mongoose").Document<unknown, {}, import("./entities/asset.entity").Asset> & import("./entities/asset.entity").Asset & Required<{
-        _id: string;
-    }> & {
-        __v: number;
-    }>;
-    findAll(): import("mongoose").Query<(import("mongoose").Document<unknown, {}, import("./entities/asset.entity").Asset> & import("./entities/asset.entity").Asset & Required<{
-        _id: string;
-    }> & {
-        __v: number;
-    })[], import("mongoose").Document<unknown, {}, import("./entities/asset.entity").Asset> & import("./entities/asset.entity").Asset & Required<{
-        _id: string;
-    }> & {
-        __v: number;
-    }, {}, import("./entities/asset.entity").Asset, "find", {}>;
-    findOne(symbol: string): import("mongoose").Query<(import("mongoose").Document<unknown, {}, import("./entities/asset.entity").Asset> & import("./entities/asset.entity").Asset & Required<{
-        _id: string;
-    }> & {
-        __v: number;
-    }) | null, import("mongoose").Document<unknown, {}, import("./entities/asset.entity").Asset> & import("./entities/asset.entity").Asset & Required<{
-        _id: string;
-    }> & {
-        __v: number;
-    }, {}, import("./entities/asset.entity").Asset, "findOne", {}>;
+    create(createAssetDto: CreateAssetDto): Promise<AssetPresenter>;
+    findAll(): Promise<AssetPresenter[]>;
+    findOne(symbol: string): Promise<AssetPresenter>;
     update(id: string, updateAssetDto: UpdateAssetDto): import("mongoose").Query<import("mongoose").UpdateWriteOpResult, import("mongoose").Document<unknown, {}, import("./entities/asset.entity").Asset> & import("./entities/asset.entity").Asset & Required<{
         _id: string;
     }> & {
